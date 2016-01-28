@@ -71,6 +71,7 @@
     inputArray = @[self.picard, self.crusher];
     expectedArray = @[self.crusher, self.picard];
     actualArray = [self.starTrekArrays alphabeticallySortedStarTrekCharactersFromArray:inputArray];
+    NSLog(@"The input class was %@ and the output class was %@",[inputArray class], [actualArray class]);
     XCTAssertEqualObjects(expectedArray, actualArray, @"Alphabetization didn't work correctly.");
 }
 
