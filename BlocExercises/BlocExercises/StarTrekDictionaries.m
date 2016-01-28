@@ -12,17 +12,33 @@
 
 - (NSString *)favoriteDrinkForStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
     /* WORK HERE */
-    return @"";
+    return characterDictionary[@"favorite drink"];
 }
 
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
     /* WORK HERE */
-    return @[];
+    
+    NSMutableArray * characterDrinks = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *character in charactersArray) {
+        
+        NSString *drink = [self favoriteDrinkForStarTrekCharacterDictionary:character];
+        if (drink) {
+            [characterDrinks addObject:drink];
+        }
+    
+    }
+    return characterDrinks;
 }
 
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
     /* WORK HERE */
-    return @{};
+    
+    NSMutableDictionary * newDict = [characterDictionary mutableCopy];
+    
+    [newDict setObject:@"General relativity is relatively inscrutable" forKey:@"quote"];
+    
+    return newDict;
 }
 
 @end
