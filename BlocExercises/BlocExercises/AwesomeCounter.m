@@ -15,7 +15,7 @@
     
     NSInteger low;
     NSInteger high;
-    NSString * numSequence;
+    NSMutableString * numSequence = [[NSMutableString alloc] init];
     
     if (number < otherNumber ) {
         low = number;
@@ -26,11 +26,9 @@
         
     }
     
-    numSequence = [[NSString alloc] init];
-    
     for (NSInteger n = low; n <= high; n++) {
     
-        numSequence = [numSequence stringByAppendingFormat:@"%ld", n];
+        [numSequence appendFormat:@"%ld", n];
     }
     return numSequence;
 }
