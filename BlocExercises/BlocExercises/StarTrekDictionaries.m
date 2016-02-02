@@ -28,7 +28,7 @@
         }
     
     }
-    return characterDrinks;
+    return [characterDrinks copy];
 }
 
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
@@ -38,7 +38,7 @@
     
     [newDict setObject:@"General relativity is relatively inscrutable" forKey:@"quote"];
     
-    return newDict;
+    return [newDict copy];
 }
 
 @end
