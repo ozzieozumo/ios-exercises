@@ -29,8 +29,9 @@
         return [(NSString *)obj1 caseInsensitiveCompare:(NSString *)obj2];
     }];
     
-    // since NSmutableArray is a subclass of NSArray, just return the sorted array
-    return sortedCharacters;
+    // make an immutabe copy to return
+    
+    return [sortedCharacters copy];
 }
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
